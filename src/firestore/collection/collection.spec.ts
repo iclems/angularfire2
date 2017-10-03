@@ -92,8 +92,7 @@ describe('AngularFirestoreCollection', () => {
           expect(data.length).toEqual(ITEMS);
           pricefilter$.next(-1);
         }
-        // on the second round, make sure the array is still the same
-        // length but the updated item is now modified
+        // on the second round, we should have filtered out everything
         if(count === 2) {
           expect(data.length).toEqual(0);
           sub.unsubscribe();
